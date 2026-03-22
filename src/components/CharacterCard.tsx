@@ -45,7 +45,7 @@ export function CharacterCard({ character, index = 0 }: CharacterCardProps) {
         </div>
       </Link>
 
-      {/* Like button at bottom */}
+      
       <div className="px-3 py-2.5">
         <button
           onClick={() => dispatch(toggleFavorite(character))}

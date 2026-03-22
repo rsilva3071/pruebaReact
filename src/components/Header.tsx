@@ -44,7 +44,7 @@ export function Header() {
               }`}
           >
             <Heart className="h-3.5 w-3.5" fill={favCount > 0 ? "currentColor" : "none"} />
-            <span>FAVS</span>
+            <span>FAVORITOSS</span>
             <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
           </button>
 
@@ -77,7 +77,7 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 className="block border-t border-border px-4 py-2.5 text-xs text-primary hover:bg-secondary text-center font-medium transition-colors"
               >
-                View all favorites
+                Ver Favoritos
               </Link>
             </div>
           )}

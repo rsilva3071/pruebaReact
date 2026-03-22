@@ -11,7 +11,7 @@ export default function Favorites() {
     <div className="min-h-screen space-bg">
       <Header />
       <main className="container max-w-6xl pb-16 pt-6 space-y-6">
-        <h1 className="text-xl font-bold text-foreground animate-fade-in-up">Favorites</h1>
+        <h1 className="text-xl font-bold text-foreground animate-fade-in-up">Favoritos</h1>
 
         {favorites.length === 0 && (
           <div className="flex flex-col items-center justify-center py-20 text-center animate-fade-in-up">
