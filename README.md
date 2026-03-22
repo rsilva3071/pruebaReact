@@ -1,12 +1,12 @@
-# 🛸 Rick & Morty Character Browser
+Rick & Morty Character Browser
 
 Una aplicación web de producción para explorar, buscar, filtrar y guardar como favoritos los personajes del universo de Rick and Morty usando la [Rick and Morty API](https://rickandmortyapi.com/).
 
-![Rick and Morty](https://rickandmortyapi.com/api/character/avatar/1.jpeg)
+
 
 ---
 
-## 🚀 Stack Tecnológico
+Stack Tecnológico
 
 | Categoría | Tecnología | Versión |
 |---|---|---|
@@ -352,6 +352,3 @@ Tema oscuro personalizado con tokens semánticos definidos en `src/index.css`:
 
 ---
 
-## 📄 Licencia
-
-Proyecto con fines educativos/demostración. Los datos de personajes pertenecen a la [Rick and Morty API](https://rickandmortyapi.com/) por Axel Fuhrmann.
