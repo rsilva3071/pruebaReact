@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    --background: 230 25% 7%;
+    --foreground: 160 100% 95%;
+
+    --card: 230 20% 11%;
+    --card-foreground: 160 20% 90%;
+    --card-hover: 230 20% 14%;
+
+    --popover: 230 20% 11%;
+    --popover-foreground: 160 20% 90%;
+
+    --primary: 156 100% 50%;
+    --primary-foreground: 230 25% 7%;
+
+    --secondary: 230 15% 18%;
+    --secondary-foreground: 160 20% 85%;
+
+    --muted: 230 15% 15%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 280 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 15% 20%;
+    --input: 230 15% 18%;
+    --ring: 156 100% 50%;
+
+    --radius: 0.75rem;
+
+    --neon-green: 156 100% 50%;
+    --neon-green-dim: 156 60% 35%;
+    --neon-pink: 330 100% 60%;
+    --neon-blue: 200 100% 55%;
+    --status-alive: 142 72% 50%;
+    --status-dead: 0 72% 55%;
+    --status-unknown: 45 90% 55%;
+
+    --space-deep: 230 25% 4%;
+    --space-nebula: 260 30% 12%;
+
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --sidebar-background: 230 20% 11%;
+    --sidebar-foreground: 160 20% 90%;
+    --sidebar-primary: 156 100% 50%;
+    --sidebar-primary-foreground: 230 25% 7%;
+    --sidebar-accent: 230 15% 18%;
+    --sidebar-accent-foreground: 160 20% 85%;
+    --sidebar-border: 230 15% 20%;
+    --sidebar-ring: 156 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--space-deep));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+}
+
+@layer utilities {
+  .glow-green {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.15), 0 0 60px hsl(var(--primary) / 0.05);
+  }
+  .glow-green-strong {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3), 0 0 60px hsl(var(--primary) / 0.1);
+  }
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .space-bg {
+    background:
+      radial-gradient(ellipse at 20% 50%, hsl(var(--space-nebula) / 0.4) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, hsl(280 40% 15% / 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, hsl(200 40% 10% / 0.3) 0%, transparent 50%),
+      hsl(var(--space-deep));
+  }
+
+  .card-surface {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    transition: box-shadow 0.3s ease-out, border-color 0.3s ease-out, transform 0.2s ease-out;
+  }
+  .card-surface:hover {
+    border-color: hsl(var(--primary) / 0.3);
+    box-shadow: 0 8px 32px hsl(var(--primary) / 0.08), 0 0 0 1px hsl(var(--primary) / 0.1);
+  }
+  .card-surface:active {
+    transform: scale(0.97);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, hsl(var(--muted)) 0%, hsl(var(--muted) / 0.5) 50%, hsl(var(--muted)) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
